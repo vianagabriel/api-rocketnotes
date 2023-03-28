@@ -4,6 +4,9 @@ const AppError = require('./utils/AppError');
 const express = require('express');
 const app = express();
 
+const database = require('./database/sqlite');
+database();
+
 const routes  = require('./routes/index');
 app.use(express.json())
 
