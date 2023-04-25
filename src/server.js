@@ -3,6 +3,9 @@ const AppError = require('./utils/AppError');
 
 const express = require('express');
 const app = express();
+const uploadConfig = require('./configs/upload');
+app.use('/files', express.static(uploadConfig.UPLOADS_FOLDER));
+
 
 const migrationsRun = require('./database/sqlite/migrations');
 migrationsRun();
